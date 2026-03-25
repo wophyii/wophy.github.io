@@ -2,7 +2,7 @@
 
 title: 我的第一篇博客
 
-date: 2026-03-25
+date: 2026-03-25 09:50
 
 description: 这是一个基于 VitePress 和 GitHub Pages 的极简博客。
 
