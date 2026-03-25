@@ -1,15 +1,13 @@
-import {defineConfig} from 'vitepress'
+import { defineConfig } from 'vitepress'
 
 // https://vitepress.vuejs.org/config/app-configs
-export default defineConfig({})
-
-
-export default {
-    base: '/wophy.github.io/',
-    title: "Wophy的博客",
+export default defineConfig({
+    base: '/wophy.github.io/', // ⚠️ 重要：GitHub Pages 子目录必须加这个
+    title: "Wophy 的博客",
+    description: "基于 VitePress 构建的技术博客",
 
     themeConfig: {
-        // 👇 添加侧边栏配置
+        // 👇 侧边栏配置
         sidebar: [
             {
                 text: '首页',
@@ -17,34 +15,52 @@ export default {
             },
             {
                 text: '关于我',
-                link: '/about.md', // 你可以创建这个文件
+                link: '/about',
             },
             {
                 text: '文章分类',
                 items: [
-                    {text: 'spring', link: '/posts/spring/'},
                     {
-                        text: 'java',
+                        text: 'Spring',
+                        link: '/posts/spring/'
+                    },
+                    {
+                        text: 'Java',
                         items: [
                             {
-                                text: 'validation', items: [
-                                        {text: '自定义验证', link: '/posts/java/validation/customized'},
-                                    ]
+                                text: 'Validation',
+                                items: [
+                                    {
+                                        text: '自定义验证',
+                                        link: '/posts/java/validation/customized'
+                                    },
+                                ]
                             },
                         ]
                     },
-                    {text: 'mysql', link: '/posts/mysql/'},
-                    {text: 'redis', link: '/posts/redis/'},
+                    {
+                        text: 'MySQL',
+                        link: '/posts/mysql/'
+                    },
+                    {
+                        text: 'Redis',
+                        link: '/posts/redis/'
+                    },
                 ],
             },
         ],
 
-        // 可选：顶部导航栏
+        // 👇 顶部导航栏
         nav: [
-            {text: '首页', link: '/'},
-            {text: '关于', link: '/about'},
-            {text: 'GitHub', link: 'https://github.com/wophyii'},
+            { text: '首页', link: '/' },
+            { text: '关于', link: '/about' },
+            { text: 'GitHub', link: 'https://github.com/wophyii' },
         ],
-    },
 
-}
+        // 👇 可选：页脚
+        footer: {
+            message: 'Released under the MIT License.',
+            copyright: 'Copyright © 2024-present Wophy'
+        }
+    },
+})
